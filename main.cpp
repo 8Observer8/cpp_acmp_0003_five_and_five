@@ -96,12 +96,6 @@ public:
     }
 };
 
-std::string intToString( int number ) {
-    std::stringstream stream;
-    stream << number;
-    return stream.str( );
-}
-
 class OutOfRange : public LogicError {
 public:
 
@@ -114,6 +108,14 @@ public:
 
         m_message = "Argument " + str_argument + " don't hit on the range [" +
                 str_beginOfRange + ", " + str_endOfRange + "]";
+    }
+
+private:
+
+    std::string intToString( int number ) {
+        std::stringstream stream;
+        stream << number;
+        return stream.str( );
     }
 };
 
